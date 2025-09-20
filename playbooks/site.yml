@@ -1,0 +1,9 @@
+- name: Apply common configuration to all hosts
+  hosts: all
+  roles:
+    - common
+
+- name: Configure webservers
+  hosts: webservers
+  roles:
+    - webserver

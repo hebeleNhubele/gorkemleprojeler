@@ -1,0 +1,12 @@
+- name: Ensure latest updates are installed
+  apt:
+    update_cache: yes
+    upgrade: dist
+  become: yes
+
+- name: Install useful packages
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ package_list }}"
+  become: yes
