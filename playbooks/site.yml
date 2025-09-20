@@ -1,5 +1,5 @@
-- name: Apply common configuration to all hosts
-  hosts: all
+- name: Install Ngnix
+  hosts: localhost
   roles:
     - common
 

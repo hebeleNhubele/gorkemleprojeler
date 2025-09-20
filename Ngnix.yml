@@ -1,0 +1,7 @@
+---
+- name: ngnix kur
+  hosts: localhost
+  become: yes
+
+  roles:
+    - webserver
