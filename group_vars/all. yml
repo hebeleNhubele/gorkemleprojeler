@@ -3,3 +3,5 @@ package_list:
   - curl
   - git
   - ngninx
+  - Nmap
+  - htop

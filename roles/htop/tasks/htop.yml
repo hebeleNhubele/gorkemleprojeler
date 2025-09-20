@@ -1,0 +1,21 @@
+---
+ - name: htop kur
+   apt:
+     name: htop
+     state: present
+     update_cache: yes
+
+ - name: kurulumu test et
+   command: which htop
+   register: htop_kurulu
+   
+ - name: version dogrula
+   command: htop --version
+   register: htop_version
+
+ - name: kurulum sonucu
+   debug:
+     msg:
+       - "htop bulundu: {{ htop_kurulu.stdout }}"
+       - "Versiyon: {{ htop_version.stdout_lines[0] }}
+       
