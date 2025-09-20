@@ -2,4 +2,4 @@
 package_list:
   - curl
   - git
-  - nginx
+  - ngninx
