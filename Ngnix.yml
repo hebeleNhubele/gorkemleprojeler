@@ -1,6 +1,6 @@
 ---
 - name: ngnix kur
-  hosts: localhost
+  hosts: webservers
   become: yes
 
   roles:

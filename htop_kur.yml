@@ -1,9 +1,9 @@
 ---
 - name: htop kur ve test et
-  hosts: localhost
+  hosts: webservers
   # gather_facts: no
   become: yes
-  connection: local
+  # connection: local
 
   roles:
     - htop
