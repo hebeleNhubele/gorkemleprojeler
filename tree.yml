@@ -1,0 +1,31 @@
+---
+- name: Install Tree
+  hosts: webservers
+  become: yes
+
+  tasks:
+    - name: Install Tree Software
+      apt:
+        name: tree
+        state: present
+        update_cache: yes
+    
+    - name: Check Tree is working
+      command: tree --version
+      register: tree_check
+      changed_when: false
+      failed_when: tree_check.rc != 0
+
+    - name: Check Result Success 
+      debug:
+        msg: "Tree has been Installed with version {{ tree_check.stdout }}"
+      when: tree_check.rc == 0
+
+    - name: Check Result Failed
+      debug:
+        msg: " Tree Install has failed"
+      when: tree_check.rc != 0
+
+
+
+
