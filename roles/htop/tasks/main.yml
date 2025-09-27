@@ -8,7 +8,7 @@
  - name: kurulumu test et
    command: which htop
    register: htop_kurulu
-   
+
  - name: version dogrula
    command: htop --version
    register: htop_version
@@ -18,4 +18,4 @@
      msg:
        - "htop bulundu: {{ htop_kurulu.stdout }}"
        - "Versiyon: {{ htop_version.stdout_lines[0] }}
-       
+

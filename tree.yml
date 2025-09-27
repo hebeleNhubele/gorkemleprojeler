@@ -1,6 +1,6 @@
 ---
 - name: Install Tree
-  hosts: webservers
+  hosts: all
   become: yes
 
   tasks:
