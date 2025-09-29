@@ -1,12 +1,11 @@
-- name: Ensure latest updates are installed
+---
+- name: Ensure system is up-to-date
   apt:
     update_cache: yes
     upgrade: dist
   become: yes
 
-- name: Install useful packages
-  apt:
-    name: "{{ item }}"
+- name: Install common utilities
+  package:
+    name: "{{ common_packages }}"
     state: present
-  loop: "{{ package_list }}"
-  become: yes

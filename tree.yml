@@ -25,7 +25,3 @@
       debug:
         msg: " Tree Install has failed"
       when: tree_check.rc != 0
-
-
-
-
